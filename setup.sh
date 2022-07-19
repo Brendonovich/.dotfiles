@@ -1,9 +1,7 @@
 set -e
 
 # https://gist.github.com/vratiu/9780109
-
 Color_Off="\033[0m"       # Text Reset
-
 Black="\033[0;30m"        # Black
 Red="\033[0;31m"          # Red
 Green="\033[0;32m"        # Green
@@ -56,12 +54,9 @@ if cmd_missing brew; then
 else
     log_end 'Brew detected'
 fi
-
-# Install packages & apps from brew
 brew bundle --file ~/.dotfiles/Brewfile
 echo
 
-# Auto-hide dock
 osascript -e '
 tell application "System Events"
     tell dock preferences
@@ -71,7 +66,6 @@ end tell'
 log_end "Dock configured"
 echo
 
-# Setup Rust
 log_start "Installing Rust"
 if !(rustc --version); then
     rustup-init -y
@@ -81,7 +75,6 @@ else
 fi
 echo
 
-# Setup NodeJS
 log_start "Installing NodeJS"
 if !(node --version); then
     fnm use 16 --install-if-missing
