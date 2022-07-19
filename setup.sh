@@ -1,4 +1,4 @@
-set -e
+#!/bin/bash
 
 # https://gist.github.com/vratiu/9780109
 Color_Off="\033[0m"       # Text Reset
@@ -24,11 +24,11 @@ function symlink() {
 }
 
 function log_start() {
-    echo "${Blue}$1${Color_Off}"
+    echo -e "${Blue}$1${Color_Off}"
 }
 
 function log_end() {
-    echo "${Green}$1${Color_Off}"
+    echo -e "${Green}$1${Color_Off}"
 }
 
 symlink ~/.dotfiles/.zprofile ~/.zprofile
@@ -69,39 +69,42 @@ log_end "Dock configured"
 echo
 
 log_start "Installing Rust"
-if !(rustc --version); then
+if !command -v rustc &> /dev/null; then
     rustup-init -y
     log_end "Rust installed"
 else
+    rustc -V
     log_end "Rust detected"
 fi
+
 echo
 
 log_start "Installing NodeJS"
-if !(node --version); then
+if !command -v node &> /dev/null; then
     fnm use 16 --install-if-missing
     log_end "NodeJS installed"
 else
+    node -v
     log_end "NodeJS detected"
 fi
 echo
 
 log_start "Configuring neovim"
-if !(test -e ~/.local/share/nvim/site/autoload/plug.vim); then
+if ! test -e ~/.local/share/nvim/site/autoload/plug.vim; then
     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     log_end "vim-plug installed"
 else
     log_end "vim-plug detected"
 fi
 
-if !(test -e ~/.local/share/nvim/site/pack/packer/start/packer.nvim); then
+if ! test -e ~/.local/share/nvim/site/pack/packer/start/packer.nvim; then
     git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
     log_end "packer.nvim installed"
 else
     log_end "packer.nvim detected"
 fi
 
-if !(test -e ~/.config/coc); then
+if ! test -e ~/.config/coc; then
     symlink ~/.dotfiles/coc ~/.config
     cd ~/.config/coc/extensions && pnpm i
     log_end "coc.nvim config setup"

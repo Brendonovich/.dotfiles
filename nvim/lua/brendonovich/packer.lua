@@ -8,8 +8,9 @@ end
 return require('packer').startup(function()
     use('wbthomason/packer.nvim')
 
-    use('nvim-telescope/telescope.nvim')
     use('nvim-lua/plenary.nvim')
+    use('nvim-telescope/telescope.nvim')
+    use('nvim-telescope/telescope-file-browser.nvim')
 
     use('joshdick/onedark.vim')
     
@@ -21,8 +22,8 @@ return require('packer').startup(function()
 	branch = 'release'
     })
 
-    use("windwp/nvim-autopairs", {
-	config = function() require("nvim-autopairs").setup {} end
+    use('windwp/nvim-autopairs', {
+	config = function() require('nvim-autopairs').setup {} end
     })
     
     if packer_bootstrap then

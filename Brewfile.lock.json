@@ -459,6 +459,12 @@
         "options": {
           "full_name": "font-hack-nerd-font"
         }
+      },
+      "font-fira-code": {
+        "version": "6.2",
+        "options": {
+          "full_name": "font-fira-code"
+        }
       }
     }
   },
@@ -467,7 +473,7 @@
       "monterey": {
         "HOMEBREW_VERSION": "3.5.5",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "4379fb3a04ca8ee6cc110e6d3af68602a0bd0c99",
+        "Homebrew/homebrew-core": "605191f9d08a514a6394665252b3d0c3388b2dc2",
         "CLT": "13.4.0.0.1.1651278267",
         "Xcode": "13.4",
         "macOS": "12.3"
