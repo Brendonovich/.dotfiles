@@ -63,6 +63,8 @@ tell application "System Events"
 	set properties to {autohide:true,screen edge:left}
     end tell
 end tell'
+defaults write com.apple.dock autohide-delay -float 0
+killall Dock
 log_end "Dock configured"
 echo
 
@@ -81,5 +83,29 @@ if !(node --version); then
     log_end "NodeJS installed"
 else
     log_end "NodeJS detected"
+fi
+echo
+
+log_start "Configuring neovim"
+if !(test -e ~/.local/share/nvim/site/autoload/plug.vim); then
+    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    log_end "vim-plug installed"
+else
+    log_end "vim-plug detected"
+fi
+
+if !(test -e ~/.local/share/nvim/site/pack/packer/start/packer.nvim); then
+    git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+    log_end "packer.nvim installed"
+else
+    log_end "packer.nvim detected"
+fi
+
+if !(test -e ~/.config/coc); then
+    symlink ~/.dotfiles/coc ~/.config
+    cd ~/.config/coc/extensions && pnpm i
+    log_end "coc.nvim config setup"
+else
+    log_end "coc.nvim config detected"
 fi
 echo
