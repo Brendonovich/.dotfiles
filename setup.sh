@@ -1,5 +1,7 @@
 #!/bin/bash
 
+trap "exit" INT
+
 # https://gist.github.com/vratiu/9780109
 Color_Off="\033[0m"       # Text Reset
 Black="\033[0;30m"        # Black
