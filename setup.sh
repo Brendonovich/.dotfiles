@@ -34,7 +34,7 @@ function log_end() {
 }
 
 function eval_brew() {
-    eval "$(/opt/homebrew/bin/brew shellenv)" > /dev/null
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 }
 
 DOT=$HOME/.dotfiles
