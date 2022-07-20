@@ -9,7 +9,7 @@ fi
 
 REPO_URL='https://github.com/brendonovich/.dotfiles'
 DOWNLOAD_PATH='/tmp/.dotfiles'
-INSTALL_PATH='~/.dotfiles'
+INSTALL_PATH='$HOME/.dotfiles'
 
 curl -L -o $DOWNLOAD_PATH $REPO_URL/tarball/master
 
