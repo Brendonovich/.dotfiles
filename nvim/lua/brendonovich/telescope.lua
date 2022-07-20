@@ -1,17 +1,10 @@
 require('telescope').setup()
 
-vim.api.nvim_set_keymap(
-    'n',
-    '<space>ff',
-    ':Telescope find_files',
-    { noremap = true }
-)
+local Remap = require("brendonovich.keymap")
+local nnoremap = Remap.nnoremap
+
+nnoremap("<C-p>", ":Telescope find_files<cr>")
 
 require('telescope').load_extension 'file_browser'
 
-vim.api.nvim_set_keymap(
-    'n',
-    '<space>fb',
-    ':Telescope file_browser',
-    { noremap = true }
-)
+nnoremap("<C-b>", ":Telescope file_browser<cr>")

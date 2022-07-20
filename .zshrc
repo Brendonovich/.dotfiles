@@ -5,7 +5,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-export DOT=~/.dotfiles
+export DOT=$HOME/.dotfiles
+export CONFIG=$HOME/.config
 
 export NVIM_INIT=$DOT/nvim/lua/brendonovich/init.lua
 export ZSHRC=$DOT/.zshrc

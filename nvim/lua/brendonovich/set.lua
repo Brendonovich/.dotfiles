@@ -4,3 +4,4 @@ vim.opt.expandtab = false
 vim.opt.wrap = false
 vim.opt.updatetime = 50
 vim.opt.relativenumber = true
+

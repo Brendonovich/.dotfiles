@@ -33,8 +33,10 @@ function log_end() {
     echo -e "${Green}$1${Color_Off}"
 }
 
+# Source environment from brew & packages
 function eval_brew() {
     eval "$(/opt/homebrew/bin/brew shellenv)"
+    eval "$(fnm env --use-on-cd)"
 }
 
 DOT=$HOME/.dotfiles
@@ -47,7 +49,7 @@ symlink $DOT/.zshrc $HOME/.zshrc
 log_end "Dotfile symlinks created"
 echo
 
-sudo sed -i '' '3i\  
+sudo sed -i '' '2i\  
 auth       sufficient     pam_tid.so'$'\n' '/etc/pam.d/sudo'
 sudo uniq /etc/pam.d/sudo > /tmp/sudo_uniq
 sudo mv /tmp/sudo_uniq /etc/pam.d/sudo
@@ -100,25 +102,17 @@ fi
 echo
 
 log_start "Configuring neovim"
-if ! test -e ~/.local/share/nvim/site/autoload/plug.vim; then
-    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    log_end "vim-plug installed"
+if ! test -e $CONFIG/nvim; then
+    symlink $DOT/nvim $CONFIG
+    log_end "nvim config setup"
 else
-    log_end "vim-plug detected"
+    log_end "nvim config detected"
 fi
 
-if ! test -e ~/.local/share/nvim/site/pack/packer/start/packer.nvim; then
-    git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-    log_end "packer.nvim installed"
-else
-    log_end "packer.nvim detected"
-fi
+# Install packer
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' &> /dev/null
+# Install plugins
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' &> /dev/null
+log_end "packer.nvim plugins synced"
 
-if ! test -e $CONFIG/coc; then
-    symlink $DOT/coc $CONFIG
-    cd $CONFIG/coc/extensions && pnpm 
-    log_end "coc.nvim config setup"
-else
-    log_end "coc.nvim config detected"
-fi
 echo

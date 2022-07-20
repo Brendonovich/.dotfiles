@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "18e566f8799220187a40dc065dbb9e148d700d72"
+        "revision": "a8372383d6f07034ba99c3c953618562a99bb6ae"
       },
       "homebrew/cask-fonts": {
         "revision": "85239d934569154a2e4c754125b9727d17804d01"
@@ -465,6 +465,12 @@
         "options": {
           "full_name": "font-fira-code"
         }
+      },
+      "font-fira-code-nerd-font": {
+        "version": "2.1.0",
+        "options": {
+          "full_name": "font-fira-code-nerd-font"
+        }
       }
     }
   },
@@ -473,10 +479,10 @@
       "monterey": {
         "HOMEBREW_VERSION": "3.5.5",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "605191f9d08a514a6394665252b3d0c3388b2dc2",
+        "Homebrew/homebrew-core": "ec968264357fc0e4a9c610b449a41ee0959aef74",
         "CLT": "13.4.0.0.1.1651278267",
         "Xcode": "13.4",
-        "macOS": "12.3"
+        "macOS": "12.4"
       }
     }
   }

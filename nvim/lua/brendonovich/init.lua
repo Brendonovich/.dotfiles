@@ -1,4 +1,6 @@
+require("brendonovich.plugins")
+require("brendonovich.colours")
 require("brendonovich.set")
-require("brendonovich.packer")
 require("brendonovich.autopairs")
 require("brendonovich.telescope")
+require("brendonovich.treesitter")
