@@ -76,7 +76,7 @@ log_end "Dock configured"
 echo
 
 log_start "Installing Rust"
-if !command -v rustc &> /dev/null; then
+if ! command -v rustc &> /dev/null; then
     rustup-init -y
     log_end "Rust installed"
 else
@@ -87,7 +87,7 @@ fi
 echo
 
 log_start "Installing NodeJS"
-if !command -v node &> /dev/null; then
+if ! command -v node &> /dev/null; then
     fnm use 16 --install-if-missing
     log_end "NodeJS installed"
 else
