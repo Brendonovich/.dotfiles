@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    loaded = true,
+    path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -83,6 +88,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["lazygit.nvim"] = {
+    loaded = true,
+    path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
+    url = "https://github.com/kdheepak/lazygit.nvim"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
