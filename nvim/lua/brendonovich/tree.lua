@@ -1,12 +1,9 @@
 require('nvim-tree').setup({
     sort_by = ("case_sensitive"),
     view = {
-	side = 'right'
+		side = 'right'
     },
 })
 
-local Remap = require("brendonovich.keymap")
-local nnoremap = Remap.nnoremap
-
-nnoremap("<C-b>", ":NvimTreeFocus<cr>")
-nnoremap("<C-S-b>", ":NvimTreeToggle<cr>")
+vim.keymap.set('n', "<C-b>", ":NvimTreeFocus<cr>")
+vim.keymap.set('n', "<C-S-b>", ":NvimTreeToggle<cr>")
