@@ -31,8 +31,10 @@ function log_end() {
     echo -e "${Green}$1${Color_Off}"
 }
 
-symlink ~/.dotfiles/.zprofile ~/.zprofile
-symlink ~/.dotfiles/.zshrc ~/.zshrc
+DOT=$HOME/.dotfiles
+
+symlink $DOT/.zprofile $HOME/.zprofile
+symlink $DOT/.zshrc $HOME/.zshrc
 log_end "Dotfile symlinks created"
 echo
 
@@ -53,7 +55,7 @@ if cmd_missing brew; then
 else
     log_end 'Brew detected'
 fi
-brew bundle --file ~/.dotfiles/Brewfile
+brew bundle --file $DOT/Brewfile
 echo
 
 osascript -e '
