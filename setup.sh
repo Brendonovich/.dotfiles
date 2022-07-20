@@ -33,6 +33,10 @@ function log_end() {
     echo -e "${Green}$1${Color_Off}"
 }
 
+function eval_brew() {
+    eval "$(/opt/homebrew/bin/brew shellenv)" > /dev/null
+}
+
 DOT=$HOME/.dotfiles
 
 symlink $DOT/.zprofile $HOME/.zprofile
@@ -48,10 +52,10 @@ log_end "Configured Touch ID for sudo"
 echo
 
 log_start "Installing 'brew' and dependencies from 'Brewfile'"
-if cmd_missing brew; then
+if ! eval_brew; then
     NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    
-    eval "$(/opt/homebrew/bin/brew shellenv)" > /dev/null
+    eval_brew
 
     log_end 'Brew installed'
 else
