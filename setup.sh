@@ -38,6 +38,9 @@ function eval_brew() {
 }
 
 DOT=$HOME/.dotfiles
+CONFIG=$HOME/.config
+
+mkdir -p $CONFIG
 
 symlink $DOT/.zprofile $HOME/.zprofile
 symlink $DOT/.zshrc $HOME/.zshrc
@@ -111,9 +114,9 @@ else
     log_end "packer.nvim detected"
 fi
 
-if ! test -e ~/.config/coc; then
-    symlink ~/.dotfiles/coc ~/.config
-    cd ~/.config/coc/extensions && pnpm i
+if ! test -e $CONFIG/coc; then
+    symlink $DOT/coc $CONFIG
+    cd $CONFIG/coc/extensions && pnpm 
     log_end "coc.nvim config setup"
 else
     log_end "coc.nvim config detected"
