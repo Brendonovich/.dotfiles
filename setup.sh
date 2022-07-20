@@ -47,7 +47,6 @@ log_start "Installing 'brew' and dependencies from 'Brewfile'"
 if cmd_missing brew; then
     NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    
-    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.dotfiles/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)" > /dev/null
 
     log_end 'Brew installed'
