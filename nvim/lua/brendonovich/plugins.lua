@@ -13,6 +13,21 @@ return require('packer').startup(function()
     use('nvim-telescope/telescope.nvim')
     use('nvim-telescope/telescope-file-browser.nvim')
 
+    use('neovim/nvim-lspconfig')
+    use('williamboman/nvim-lsp-installer')
+    use("hrsh7th/cmp-nvim-lsp")
+    use("hrsh7th/cmp-buffer")
+    use("hrsh7th/nvim-cmp")
+    use("L3MON4D3/LuaSnip")
+    use("glepnir/lspsaga.nvim")
+
+    use("rust-lang/rust.vim")
+
+    use('kyazdani42/nvim-tree.lua', {
+	requires = { 'kyazdani42/nvim-web-devicons' },
+    })
+    use('voldikss/vim-floaterm')
+
     use('joshdick/onedark.vim')
     
     use('nvim-treesitter/nvim-treesitter', {
@@ -20,7 +35,7 @@ return require('packer').startup(function()
     })
 
     use('windwp/nvim-autopairs', {
-	config = function() require('nvim-autopairs').setup {} end
+	config = function() require('nvim-autopairs').setup() end
     })
     
     if packer_bootstrap then

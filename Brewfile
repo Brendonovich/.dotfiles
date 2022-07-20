@@ -11,6 +11,7 @@ brew "pnpm"
 brew "python"
 brew "ripgrep"
 brew "fd"
+brew "rust-analyzer"
 
 cask "rectangle"
 cask "discord"
