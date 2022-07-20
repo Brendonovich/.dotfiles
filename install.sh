@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+!/usr/bin/env sh
 
 set -e
 
@@ -7,13 +7,20 @@ if ! sudo -v; then
   exit 1
 fi
 
-REPO_URL=https://github.com/brendonovich/.dotfiles
-DOWNLOAD_PATH=/tmp/.dotfiles
+function eval_brew() {
+    eval "$(/opt/homebrew/bin/brew shellenv)" > /dev/null
+}
+
+REPO_URL=https://github.com/brendonovich/.dotfiles.git
 INSTALL_PATH=$HOME/.dotfiles
 
-curl -L -o $DOWNLOAD_PATH $REPO_URL/tarball/master
+if ! eval_brew; then
+    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-mkdir -p $INSTALL_PATH
-sudo tar -xzof $DOWNLOAD_PATH -C $INSTALL_PATH --strip-components=1
+    eval_brew
+fi
+brew install git
+
+git clone $REPO_URL $INSTALL_PATH --recurse-submodules
 
 $INSTALL_PATH/setup.sh
