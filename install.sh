@@ -21,6 +21,10 @@ if ! eval_brew; then
 fi
 brew install git
 
-git clone $REPO_URL $INSTALL_PATH --recurse-submodules
+if ! test -e "$HOME/.dotfiles/"; then
+    git clone $REPO_URL $INSTALL_PATH --recurse-submodules
+else
+    git --git-dir $INSTALL_PATH pull
+fi
 
 $INSTALL_PATH/setup.sh
