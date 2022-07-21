@@ -21,6 +21,8 @@ require('packer').startup(function()
     use("L3MON4D3/LuaSnip")
     use("glepnir/lspsaga.nvim")
 
+	use('github/copilot.vim')
+
     use("rust-lang/rust.vim")
 
     use('kyazdani42/nvim-tree.lua', {
@@ -30,6 +32,10 @@ require('packer').startup(function()
     use('kdheepak/lazygit.nvim')
 	use('numToStr/Comment.nvim', {
 		config = function() require('Comment').setup() end
+	})
+	use('kevinhwang91/promise-async')
+	use('kevinhwang91/nvim-ufo', {
+		requires = { 'kevinhwang91/promise-async' }
 	})
 
 	use('joshdick/onedark.vim')

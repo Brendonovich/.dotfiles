@@ -89,6 +89,11 @@ _G.packer_plugins = {
     path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   ["lazygit.nvim"] = {
     loaded = true,
     path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
@@ -129,6 +134,11 @@ _G.packer_plugins = {
     path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-ufo"] = {
+    loaded = true,
+    path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/nvim-ufo",
+    url = "https://github.com/kevinhwang91/nvim-ufo"
+  },
   ["onedark.vim"] = {
     loaded = true,
     path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/onedark.vim",
@@ -143,6 +153,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["promise-async"] = {
+    loaded = true,
+    path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/promise-async",
+    url = "https://github.com/kevinhwang91/promise-async"
   },
   ["rust.vim"] = {
     loaded = true,
