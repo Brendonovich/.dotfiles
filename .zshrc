@@ -30,3 +30,7 @@ function ghclone {
 function gh.com {
 	open https://github.com/$1
 }
+
+function brewdle {
+	brew bundle --file $BREWFILE
+}
