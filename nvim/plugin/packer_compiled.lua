@@ -139,6 +139,11 @@ _G.packer_plugins = {
     path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/nvim-ufo",
     url = "https://github.com/kevinhwang91/nvim-ufo"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
   ["onedark.vim"] = {
     loaded = true,
     path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/onedark.vim",
