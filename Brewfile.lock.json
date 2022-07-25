@@ -654,6 +654,12 @@
         "options": {
           "full_name": "linear-linear"
         }
+      },
+      "microsoft-outlook": {
+        "version": "16.63.22070801",
+        "options": {
+          "full_name": "microsoft-outlook"
+        }
       }
     }
   },
