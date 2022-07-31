@@ -34,3 +34,6 @@ function gh.com {
 function brewdle {
 	brew bundle --file $BREWFILE
 }
+
+export PNPM_HOME=$HOME/Library/pnpm
+export PATH="$PNPM_HOME:$PATH"

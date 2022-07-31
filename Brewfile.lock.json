@@ -2,7 +2,7 @@
   "entries": {
     "tap": {
       "homebrew/cask": {
-        "revision": "a56f2fbbffac20366c67c3c51f7b198c0d63016c"
+        "revision": "7ab1edfa30dca5fe47e535815fd022034c80790d"
       },
       "homebrew/cask-fonts": {
         "revision": "9ec980067988fba61fb0f44cb042c1645d5bda02"
@@ -562,6 +562,20 @@
             }
           }
         }
+      },
+      "yarn": {
+        "version": "1.22.19",
+        "bottle": {
+          "rebuild": 0,
+          "root_url": "https://ghcr.io/v2/homebrew/core",
+          "files": {
+            "all": {
+              "cellar": ":any_skip_relocation",
+              "url": "https://ghcr.io/v2/homebrew/core/yarn/blobs/sha256:79b90324a5365189a144b786e9bdb3bf32be3823e9041d5f3250ea7b804dcd0b",
+              "sha256": "79b90324a5365189a144b786e9bdb3bf32be3823e9041d5f3250ea7b804dcd0b"
+            }
+          }
+        }
       }
     },
     "cask": {
@@ -608,7 +622,7 @@
         }
       },
       "warp": {
-        "version": "0.2022.07.18.09.06.stable_01",
+        "version": "0.2022.07.25.09.05.stable_01",
         "options": {
           "full_name": "warp"
         }
@@ -638,7 +652,7 @@
         }
       },
       "docker": {
-        "version": "4.10.1,82475",
+        "version": "4.11.0,83626",
         "options": {
           "full_name": "docker"
         }
@@ -672,6 +686,18 @@
         "options": {
           "full_name": "blackhole-16ch"
         }
+      },
+      "obs-websocket": {
+        "version": "5.0.0",
+        "options": {
+          "full_name": "obs-websocket"
+        }
+      },
+      "chatterino": {
+        "version": "2.3.5",
+        "options": {
+          "full_name": "chatterino"
+        }
       }
     }
   },
@@ -680,7 +706,7 @@
       "monterey": {
         "HOMEBREW_VERSION": "3.5.6",
         "HOMEBREW_PREFIX": "/opt/homebrew",
-        "Homebrew/homebrew-core": "e86752bb745f4ca156dca3e9e1573455b2fad31b",
+        "Homebrew/homebrew-core": "09778d3a68709bcd2f842d2946d6d9f901c462f6",
         "CLT": "13.4.0.0.1.1651278267",
         "Xcode": "13.4",
         "macOS": "12.4"
