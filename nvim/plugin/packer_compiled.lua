@@ -104,6 +104,11 @@ _G.packer_plugins = {
     path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
     url = "https://github.com/glepnir/lspsaga.nvim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -144,10 +149,10 @@ _G.packer_plugins = {
     path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
-  ["onedark.vim"] = {
+  ["onedark.nvim"] = {
     loaded = true,
-    path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/onedark.vim",
-    url = "https://github.com/joshdick/onedark.vim"
+    path = "/Users/brendonovich/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/ii14/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,

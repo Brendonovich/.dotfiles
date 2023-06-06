@@ -15,3 +15,5 @@ vim.keymap.set('i', '˚', '<esc>:m -2<cr>==gi')
 vim.keymap.set('v', '∆', ":m '>+1<cr>gv=gv")
 vim.keymap.set('v', '˚', ":m '<-2<cr>gv=gv")
 
+vim.keymap.set('n', '<leader>ce', ':Copilot enable<cr>')
+vim.keymap.set('n', '<leader>cd', ':Copilot disable<cr>')

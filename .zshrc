@@ -35,5 +35,25 @@ function brewdle {
 	brew bundle --file $BREWFILE
 }
 
+alias nvim=lvim
+
 export PNPM_HOME=$HOME/Library/pnpm
 export PATH="$PNPM_HOME:$PATH"
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export PATH="$HOME/.local/bin:$PATH"
+
+export EDITOR=nvim
+
+# pnpm
+export PNPM_HOME="/Users/brendonovich/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+# source /Users/brendonovich/.docker/init-zsh.sh || true # Added by Docker Desktop
+
+alias cpg="cargo prisma generate"
+alias lg="lazygit"
